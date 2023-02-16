@@ -1,0 +1,61 @@
+/** @format */
+
+.doubleinput-container {
+	border: 2px solid silver;
+	width: 500px;
+	margin: auto auto;
+	height: max-content;
+	border-radius: 12px;
+	padding: 4px;
+}
+
+.doubleinput {
+	display: grid;
+	grid-template-rows: 40px 1fr;
+}
+
+.doubleinput__input {
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	width: 400px;
+	border: 0;
+	padding: 14px;
+	font-weight: 600;
+	font-size: 16px;
+}
+.doubleinput__textarea {
+	resize: none;
+	outline: 0;
+	width: 500px;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	padding: 14px;
+}
+
+.doubleinput__textarea[placeholder]:empty:before {
+	content: attr(placeholder);
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	color: #555;
+	font-weight: 600;
+	font-size: 14px;
+}
+
+.doubleinput__input:focus {
+	outline: 0;
+}
+
+.note-button {
+	background-color: #ffe4b5;
+	width: max-content;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	padding: 21px;
+	margin: 24px auto;
+	border-radius: 12px;
+}
+
+.note-button:hover {
+	cursor: pointer;
+	background-color: khaki;
+}
