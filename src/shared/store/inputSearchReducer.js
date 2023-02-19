@@ -3,7 +3,7 @@
 import { createAction, createReducer } from '@reduxjs/toolkit';
 
 const initialState = {
-	inputValue: null,
+	inputValue: '',
 };
 
 export const newInputValue = createAction('NEWINPUTVALUE');

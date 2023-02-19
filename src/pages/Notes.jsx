@@ -16,6 +16,7 @@ import DoubleInput from '../widgets/NotePage/DoubleInput';
 import '../shared/styles/notes.css';
 import MainNote from '../widgets/Notes/MainNote';
 import PinnedNote from '../widgets/Notes/PinnedNote';
+import VisibleHeader from '../widgets/NotePage/VisibleHeader';
 
 export default function Notes() {
 	const dispatch = useDispatch();
@@ -37,35 +38,35 @@ export default function Notes() {
 	return (
 		<div className='notes-container'>
 			<DoubleInput />
-			{pinnedNotes ? (
-				<div className='notes-header'> Закрепленные заметки</div>
-			) : (
-				''
-			)}
-			<div className='note-block'>
-				<div className='notes'>
-					{pinnedNotes
-						? pinnedNotes.map((item) => (
-								<PinnedNote
-									header={item.name}
-									text={item.paragraphs}
-								/>
-						  ))
-						: ''}
-				</div>
+			<VisibleHeader
+				active={pinnedNotes}
+				text='Закрепленные'
+			/>
+			<div className='notes'>
+				{pinnedNotes
+					? pinnedNotes.map((item) => (
+							<PinnedNote
+								header={item.name}
+								text={item.paragraphs}
+							/>
+					  ))
+					: ''}
 			</div>
-			{pinnedNotes ? <div className='notes-header'> Другие заметки</div> : ''}
-			<div className='note-block'>
-				<div className='notes'>
-					{notes
-						? notes.map((item) => (
-								<MainNote
-									header={item.name}
-									text={item.paragraphs}
-								/>
-						  ))
-						: ''}
-				</div>
+
+			<VisibleHeader
+				active={notes}
+				text='Другие'
+			/>
+
+			<div className='notes'>
+				{notes
+					? notes.map((item) => (
+							<MainNote
+								header={item.name}
+								text={item.paragraphs}
+							/>
+					  ))
+					: ''}
 			</div>
 		</div>
 	);

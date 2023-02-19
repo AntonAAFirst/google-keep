@@ -5,7 +5,6 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import ArchivedNote from '../Notes/ArchivedNote';
-import PinnedNote from '../Notes/PinnedNote';
 
 export default function FilteredArchivedNotes() {
 	const [filteredNotes, setFilteredNotes] = useState([]);

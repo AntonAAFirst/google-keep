@@ -23,7 +23,7 @@ export async function authLogic(registerActive, name, password, setActive) {
 					password: password,
 				})
 				.then(({ data }) => {
-					Cookies.set('curreыntId', data.name);
+					Cookies.set('currentId', data.name);
 				});
 
 			alert('Вы зарегестрировались!');

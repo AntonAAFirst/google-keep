@@ -7,6 +7,7 @@
 	height: max-content;
 	border-radius: 12px;
 	padding: 4px;
+	/* max-height: 400px; */
 }
 
 .doubleinput {
@@ -17,7 +18,7 @@
 .doubleinput__input {
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
 		'Lucida Sans', Arial, sans-serif;
-	width: 400px;
+	width: 475px;
 	border: 0;
 	padding: 14px;
 	font-weight: 600;
@@ -26,10 +27,11 @@
 .doubleinput__textarea {
 	resize: none;
 	outline: 0;
-	width: 500px;
+	width: 475px;
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
 		'Lucida Sans', Arial, sans-serif;
 	padding: 14px;
+	/* max-height: 400px; */
 }
 
 .doubleinput__textarea[placeholder]:empty:before {

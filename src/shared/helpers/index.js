@@ -5,6 +5,20 @@ import { defaultFirebaseRequest } from '../http';
 import { newNotes } from '../store/noteReducer';
 import { checkNoteTextLength } from './notePage';
 
+function checkUnique(array, name) {
+	let flag = true;
+
+	if (array !== undefined) {
+		for (let item in array) {
+			if (name === array[item].name) {
+				flag = false;
+			}
+		}
+	}
+
+	return flag;
+}
+
 export async function createNote(header, noteText, setInputActive, dispatch) {
 	setInputActive(false);
 	const id = Cookies.get('currentId');
@@ -17,13 +31,17 @@ export async function createNote(header, noteText, setInputActive, dispatch) {
 
 	let uniqueName = true;
 
-	await defaultFirebaseRequest.get(`/${id}/notes.json`).then(({ data }) => {
-		for (let item in data) {
-			if (header === data[item].name) {
-				uniqueName = false;
-				console.log('IT IS THE UNIQUE NAME - ', uniqueName);
-			}
-		}
+	await defaultFirebaseRequest.get(`/${id}.json`).then(({ data }) => {
+		const mainNotes = data.notes;
+		const pinnedNotes = data.pinned;
+		const archivedNotes = data.archived;
+		const trashedNotes = data.trashed;
+
+		uniqueName =
+			checkUnique(mainNotes, header) &&
+			checkUnique(pinnedNotes, header) &&
+			checkUnique(archivedNotes, header) &&
+			checkUnique(trashedNotes, header);
 	});
 
 	if (correctNaming && uniqueName) {

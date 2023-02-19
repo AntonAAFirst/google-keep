@@ -2,9 +2,7 @@
 
 import '../../shared/styles/header.css';
 import note from '../../shared/img/note.png';
-import '../../shared/styles/selectionpanel.css';
 import React from 'react';
-import SelectionPanel from './SelectionPanel';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { newInputValue } from '../../shared/store/inputSearchReducer';

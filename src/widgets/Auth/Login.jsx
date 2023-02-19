@@ -28,16 +28,13 @@ export default function Login({ active, setActive }) {
 						reduxValue={password}
 						dispatchFunction={newAuthPassword}
 						placeholder='Ваш пароль'
+						inputType='password'
 					/>
 				</div>
 				<div className='auth-buttonblock'>
 					<Link
 						to='/notes'
-						onClick={() => {
-							console.log(registerActive);
-
-							authLogic(registerActive, name, password, setActive);
-						}}
+						onClick={() => authLogic(registerActive, name, password, setActive)}
 						className='auth-form__button'>
 						{registerActive ? 'Зарегестрироваться' : 'Продолжить'}
 					</Link>

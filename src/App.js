@@ -7,6 +7,7 @@ import Layout from './pages/Layout';
 import Notes from './pages/Notes';
 import Search from './pages/Search';
 import Trash from './pages/Trash';
+import SelectedNote from './widgets/SeletedPage/SelectedNote';
 
 export default function App() {
 	return (
@@ -29,6 +30,10 @@ export default function App() {
 				<Route
 					path='search'
 					element={<Search />}
+				/>
+				<Route
+					path='selectednote'
+					element={<SelectedNote />}
 				/>
 			</Route>
 		</Routes>

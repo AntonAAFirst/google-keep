@@ -7,6 +7,7 @@ export default function AuthInput({
 	reduxValue,
 	dispatchFunction,
 	placeholder,
+	inputType,
 }) {
 	const dispatch = useDispatch();
 
@@ -17,7 +18,7 @@ export default function AuthInput({
 				dispatch(dispatchFunction(e.target.value));
 			}}
 			className='auth-form__input'
-			type='text'
+			type={inputType}
 			placeholder={placeholder}
 		/>
 	);
