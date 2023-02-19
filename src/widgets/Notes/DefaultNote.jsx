@@ -3,44 +3,46 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import {
-	newName,
 	newNoteIndex,
-	newParagraphs,
+	newNoteName,
+	newNoteParagraphs,
 	newPath,
 } from '../../shared/store/selectedNoteReducer';
 import OK from '../../shared/img/ok.png';
 import { defaultFirebaseRequest } from '../../shared/http';
 import Cookies from 'js-cookie';
 import { Link } from 'react-router-dom';
+import { setData } from '../../shared/helpers/notePage';
 
 export default function DefaultNote({ header, children }) {
 	const dispatch = useDispatch();
 
-	function setData() {
-		const id = Cookies.get('currentId');
+	// function checkName(array, name, path, dispatch) {
+	// 	if (array !== undefined) {
+	// 		for (let item in array) {
+	// 			if (array[item].name === name) {
+	// 				dispatch(newNoteName(array[item].name));
+	// 				dispatch(newNoteParagraphs(array[item].paragraphs));
+	// 				dispatch(newNoteIndex(item));
+	// 				dispatch(newPath(path));
+	// 			}
+	// 		}
+	// 	}
+	// }
 
-		let foundName = 'nothing';
+	// async function setData() {
+	// 	const id = Cookies.get('currentId');
 
-		defaultFirebaseRequest.get(`/${id}.json`).then(({ data }) => {
-			const notes = data.notes;
-			const pinned = data.pinned;
-			const trashed = data.trashed;
-			const archived = data.archived;
+	// 	await defaultFirebaseRequest.get(`/${id}.json`).then(({ data }) => {
+	// 		const notes = data.notes;
+	// 		const pinned = data.pinned;
+	// 		const archived = data.archived;
 
-			let flag = true;
-
-			if (notes !== undefined) {
-				for (let item in notes) {
-					if (notes[item].name === header) {
-						foundName = notes[item].name;
-						flag = false;
-					}
-				}
-			}
-			console.log('ЭТО НАЙДЕННОЕ ИМЯ В DEFAULT NOTE - ', foundName);
-			dispatch(newName(foundName));
-		});
-	}
+	// 		checkName(notes, header, 'notes', dispatch);
+	// 		checkName(pinned, header, 'pinned', dispatch);
+	// 		checkName(archived, header, 'archived', dispatch);
+	// 	});
+	// }
 
 	return (
 		<div>
@@ -51,7 +53,7 @@ export default function DefaultNote({ header, children }) {
 					alt='ok'
 				/>
 				<Link
-					onClick={setData}
+					onClick={() => setData(header, dispatch)}
 					to='../selectednote'
 					style={{
 						marginBottom: '16px',

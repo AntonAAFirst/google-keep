@@ -11,13 +11,11 @@ import controlPanelReducer from './controlPanelReducer';
 import inputSearchReducer from './inputSearchReducer';
 import noteReducer from './noteReducer';
 import selectedNoteReducer from './selectedNoteReducer';
-import selectionPanelReducer from './selectionPanelReducer';
 import thunk from 'redux-thunk';
 
 const rootReducer = combineReducers({
 	note: noteReducer,
 	controlPanel: controlPanelReducer,
-	selectionPanel: selectionPanelReducer,
 	mainInput: inputSearchReducer,
 	auth: authReducer,
 	selectedNote: selectedNoteReducer,

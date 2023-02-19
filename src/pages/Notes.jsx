@@ -24,15 +24,22 @@ export default function Notes() {
 	const notes = useSelector((state) => state.note.notes);
 	const pinnedNotes = useSelector((state) => state.note.pinned);
 
-	useEffect(() => {
+	async function getAllNotes() {
 		const id = Cookies.get('currentId');
 
-		defaultFirebaseRequest.get(`/${id}.json`).then(({ data }) => {
+		await defaultFirebaseRequest.get(`/${id}.json`).then(({ data }) => {
 			dispatch(newNotes(data.notes));
 			dispatch(newPinned(data.pinned));
 			dispatch(newTrashed(data.trashed));
 			dispatch(newArchived(data.archived));
 		});
+		console.log('ЭТО ИЗ МЕТОДА ПОЛУЧЕНИЯ ЗАМЕТОК!!!');
+	}
+
+	useEffect(() => {
+		console.log('ВЫДЕЛЕНИЕ 1 !!!');
+		getAllNotes();
+		console.log('ВЫДЕЛЕНИЕ 2 !!!');
 	}, []);
 
 	return (
