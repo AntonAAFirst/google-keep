@@ -12,7 +12,7 @@ export default function DoubleInput() {
 	const dispatch = useDispatch();
 
 	function buttonSaveLogic() {
-		if (headerText === '') {
+		if (headerText.length <= 1) {
 			alert('Заголовок не может быть пустым');
 		} else {
 			createNote(

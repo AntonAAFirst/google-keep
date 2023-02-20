@@ -10,9 +10,13 @@ import {
 	restoreTrashNote,
 } from '../../shared/helpers/trashedNoteLogic';
 import { removePromtText, setPromtText } from '../../shared/helpers/promtps';
+import { showNotification } from '../../shared/helpers/notificationLogic';
 
 export default function TrashNote({ header, text }) {
 	const dispatch = useDispatch();
+
+	const notificationDeleteText = 'Заметка удалена навсегда';
+	const notificationRestoreText = 'Заметка восстановлена';
 
 	return (
 		<div>
@@ -37,7 +41,10 @@ export default function TrashNote({ header, text }) {
 						<img
 							onMouseMove={() => setPromtText('Удалить навсегда', dispatch)}
 							onMouseLeave={() => removePromtText(dispatch)}
-							onClick={() => permanentlyRemoveTrashNote(header, dispatch)}
+							onClick={() => {
+								showNotification(notificationDeleteText, dispatch);
+								permanentlyRemoveTrashNote(header, dispatch);
+							}}
 							className='note-icons__item'
 							src={deleteIcon}
 							alt='here'
@@ -45,7 +52,10 @@ export default function TrashNote({ header, text }) {
 						<img
 							onMouseMove={() => setPromtText('Восстановить', dispatch)}
 							onMouseLeave={() => removePromtText(dispatch)}
-							onClick={() => restoreTrashNote(header, text, dispatch)}
+							onClick={() => {
+								showNotification(notificationRestoreText, dispatch);
+								restoreTrashNote(header, text, dispatch);
+							}}
 							className='note-icons__item'
 							src={restoreIcon}
 							alt='here'

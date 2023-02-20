@@ -12,6 +12,7 @@ import noteReducer from './noteReducer';
 import selectedNoteReducer from './selectedNoteReducer';
 import thunk from 'redux-thunk';
 import iconPromptReducer from './iconPromptReducer';
+import notificationReducer from './notificationReducer';
 
 const rootReducer = combineReducers({
 	note: noteReducer,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
 	auth: authReducer,
 	selectedNote: selectedNoteReducer,
 	iconPrompt: iconPromptReducer,
+	notification: notificationReducer,
 });
 
 const middlewareEnhancer = applyMiddleware(thunk);

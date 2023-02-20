@@ -1,6 +1,6 @@
 /** @format */
 
-import React, { useState } from 'react';
+import React from 'react';
 import lamp from '../../shared/img/lamp.png';
 import archive from '../../shared/img/archive.png';
 import trash from '../../shared/img/trash.png';

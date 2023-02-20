@@ -7,6 +7,7 @@ import Header from '../widgets/Layout/Header';
 import ControlPanel from '../widgets/Layout/ControlPanel';
 import Login from '../widgets/Auth/Login';
 import IconPrompt from '../widgets/NotePage/IconPrompt';
+import Notification from '../widgets/NotePage/Notification';
 
 export default function Layout() {
 	const [authActive, setAuthActive] = useState(true);
@@ -23,6 +24,7 @@ export default function Layout() {
 				setActive={setAuthActive}
 			/>
 			<IconPrompt />
+			<Notification />
 		</div>
 	);
 }

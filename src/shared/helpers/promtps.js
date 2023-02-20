@@ -12,5 +12,4 @@ export function setPromtText(text, dispatch) {
 
 export function removePromtText(dispatch) {
 	dispatch(newIconPromptActive(false));
-	// dispatch(newIconPromtText(''));
 }

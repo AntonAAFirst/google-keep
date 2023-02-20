@@ -1,51 +1,25 @@
 /** @format */
 
 import React from 'react';
-import pin from '../../shared/img/pin.png';
-import archive from '../../shared/img/archive.png';
-import { useDispatch } from 'react-redux';
-import buttonDelete from '../../shared/img/cancel.png';
-import {
-	archiveMainNote,
-	deleteMainNote,
-	pinMainNote,
-} from '../../shared/helpers/mainNoteLogic';
 import DefaultNote from './DefaultNote';
-import {
-	newIconPromptActive,
-	newIconPromtText,
-} from '../../shared/store/iconPromptReducer';
-import { removePromtText, setPromtText } from '../../shared/helpers/promtps';
+import PinIcon from '../ClickableIcons/PinIcon';
+import ArchiveIcon from '../ClickableIcons/ArchiveIcon';
+import DeleteIcon from '../ClickableIcons/DeleteIcon';
 
 export default function MainNote({ header, text }) {
-	const dispatch = useDispatch();
-
 	return (
 		<DefaultNote header={header}>
-			<img
-				onMouseMove={() => setPromtText('Закрепить заметку', dispatch)}
-				onMouseLeave={() => removePromtText(dispatch)}
-				onClick={() => pinMainNote(header, text, dispatch)}
-				className='note-icons__item'
-				src={pin}
-				alt='here'
+			<PinIcon
+				header={header}
+				text={text}
 			/>
-			<img
-				onMouseMove={() => setPromtText('Архивировать заметку', dispatch)}
-				onMouseLeave={() => removePromtText(dispatch)}
-				onClick={() => archiveMainNote(header, text, dispatch)}
-				className='note-icons__item'
-				src={archive}
-				alt='here'
+			<ArchiveIcon
+				header={header}
+				text={text}
 			/>
-
-			<img
-				onMouseMove={() => setPromtText('Удалить заметку', dispatch)}
-				onMouseLeave={() => removePromtText(dispatch)}
-				onClick={() => deleteMainNote(header, text, dispatch)}
-				className='note-icons__item'
-				src={buttonDelete}
-				alt='here'
+			<DeleteIcon
+				header={header}
+				text={text}
 			/>
 		</DefaultNote>
 	);

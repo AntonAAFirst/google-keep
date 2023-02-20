@@ -1,46 +1,25 @@
 /** @format */
 
 import React from 'react';
-import unpin from '../../shared/img/unpin.png';
-import archive from '../../shared/img/archive.png';
-import { useDispatch } from 'react-redux';
-import buttonDelete from '../../shared/img/cancel.png';
-import {
-	archivePinnedNote,
-	deletePinnedNote,
-	unpinPinnedNote,
-} from '../../shared/helpers/pinnedNoteLogic';
 import DefaultNote from './DefaultNote';
-import { removePromtText, setPromtText } from '../../shared/helpers/promtps';
+import ArchiveIcon from '../ClickableIcons/ArchiveIcon';
+import DeleteIcon from '../ClickableIcons/DeleteIcon';
+import UnPinIcon from '../ClickableIcons/UnPinIcon';
 
 export default function PinnedNote({ header, text }) {
-	const dispatch = useDispatch();
 	return (
 		<DefaultNote header={header}>
-			<img
-				onMouseMove={() => setPromtText('Открепить заметку', dispatch)}
-				onMouseLeave={() => removePromtText(dispatch)}
-				onClick={() => unpinPinnedNote(header, text, dispatch)}
-				className='note-icons__item'
-				src={unpin}
-				alt='here'
+			<UnPinIcon
+				header={header}
+				text={text}
 			/>
-			<img
-				onMouseMove={() => setPromtText('Архивировать заметку', dispatch)}
-				onMouseLeave={() => removePromtText(dispatch)}
-				onClick={() => archivePinnedNote(header, text, dispatch)}
-				className='note-icons__item'
-				src={archive}
-				alt='here'
+			<ArchiveIcon
+				header={header}
+				text={text}
 			/>
-
-			<img
-				onMouseMove={() => setPromtText('Удалить заметку', dispatch)}
-				onMouseLeave={() => removePromtText(dispatch)}
-				onClick={() => deletePinnedNote(header, text, dispatch)}
-				className='note-icons__item'
-				src={buttonDelete}
-				alt='here'
+			<DeleteIcon
+				header={header}
+				text={text}
 			/>
 		</DefaultNote>
 	);

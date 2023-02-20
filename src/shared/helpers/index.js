@@ -92,7 +92,6 @@ export async function addNoteToFirebase(
 	name,
 	paragraphs,
 	directory,
-
 	dispatch,
 	dispatchFunction,
 ) {
