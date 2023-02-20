@@ -33,13 +33,10 @@ export default function Notes() {
 			dispatch(newTrashed(data.trashed));
 			dispatch(newArchived(data.archived));
 		});
-		console.log('ЭТО ИЗ МЕТОДА ПОЛУЧЕНИЯ ЗАМЕТОК!!!');
 	}
 
 	useEffect(() => {
-		console.log('ВЫДЕЛЕНИЕ 1 !!!');
 		getAllNotes();
-		console.log('ВЫДЕЛЕНИЕ 2 !!!');
 	}, []);
 
 	return (

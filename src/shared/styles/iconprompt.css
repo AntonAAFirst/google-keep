@@ -1,0 +1,21 @@
+/** @format */
+
+.iconprompt-container {
+	background-color: #ffe4b5;
+	transform: scale(0);
+	transition: 0.5s;
+	position: fixed;
+	height: 75px;
+	font-size: 21px;
+	display: grid;
+	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+		'Lucida Sans', Arial, sans-serif;
+	font-weight: 500;
+	text-align: center;
+	width: 100%;
+	/* border-radius: 12px; */
+}
+
+.iconprompt-active {
+	transform: scale(1);
+}

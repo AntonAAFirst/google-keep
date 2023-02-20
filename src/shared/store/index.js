@@ -5,13 +5,13 @@ import {
 	combineReducers,
 	configureStore,
 } from '@reduxjs/toolkit';
-// import { composeWithDevTools } from '@reduxjs/toolkit/dist/devtoolsExtension';
 import authReducer from './authReducer';
 import controlPanelReducer from './controlPanelReducer';
 import inputSearchReducer from './inputSearchReducer';
 import noteReducer from './noteReducer';
 import selectedNoteReducer from './selectedNoteReducer';
 import thunk from 'redux-thunk';
+import iconPromptReducer from './iconPromptReducer';
 
 const rootReducer = combineReducers({
 	note: noteReducer,
@@ -19,6 +19,7 @@ const rootReducer = combineReducers({
 	mainInput: inputSearchReducer,
 	auth: authReducer,
 	selectedNote: selectedNoteReducer,
+	iconPrompt: iconPromptReducer,
 });
 
 const middlewareEnhancer = applyMiddleware(thunk);

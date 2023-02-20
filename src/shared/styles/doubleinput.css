@@ -7,7 +7,6 @@
 	height: max-content;
 	border-radius: 12px;
 	padding: 4px;
-	/* max-height: 400px; */
 }
 
 .doubleinput {
@@ -31,12 +30,11 @@
 	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
 		'Lucida Sans', Arial, sans-serif;
 	padding: 14px;
-	/* max-height: 400px; */
 }
 
 .doubleinput__textarea[placeholder]:empty:before {
 	content: attr(placeholder);
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+	font-family: 'Treb	uchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
 		'Lucida Sans', Arial, sans-serif;
 	color: #555;
 	font-weight: 600;

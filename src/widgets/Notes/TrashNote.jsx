@@ -4,12 +4,12 @@ import React from 'react';
 import deleteIcon from '../../shared/img/delete.png';
 import restoreIcon from '../../shared/img/restore.png';
 import { useDispatch } from 'react-redux';
-import DefaultNote from './DefaultNote';
 import OK from '../../shared/img/ok.png';
 import {
 	permanentlyRemoveTrashNote,
 	restoreTrashNote,
 } from '../../shared/helpers/trashedNoteLogic';
+import { removePromtText, setPromtText } from '../../shared/helpers/promtps';
 
 export default function TrashNote({ header, text }) {
 	const dispatch = useDispatch();
@@ -35,12 +35,16 @@ export default function TrashNote({ header, text }) {
 				<div className='note-icons'>
 					<div className='icons-container'>
 						<img
+							onMouseMove={() => setPromtText('Удалить навсегда', dispatch)}
+							onMouseLeave={() => removePromtText(dispatch)}
 							onClick={() => permanentlyRemoveTrashNote(header, dispatch)}
 							className='note-icons__item'
 							src={deleteIcon}
 							alt='here'
 						/>
 						<img
+							onMouseMove={() => setPromtText('Восстановить', dispatch)}
+							onMouseLeave={() => removePromtText(dispatch)}
 							onClick={() => restoreTrashNote(header, text, dispatch)}
 							className='note-icons__item'
 							src={restoreIcon}

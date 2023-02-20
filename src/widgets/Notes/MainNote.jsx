@@ -11,6 +11,11 @@ import {
 	pinMainNote,
 } from '../../shared/helpers/mainNoteLogic';
 import DefaultNote from './DefaultNote';
+import {
+	newIconPromptActive,
+	newIconPromtText,
+} from '../../shared/store/iconPromptReducer';
+import { removePromtText, setPromtText } from '../../shared/helpers/promtps';
 
 export default function MainNote({ header, text }) {
 	const dispatch = useDispatch();
@@ -18,12 +23,16 @@ export default function MainNote({ header, text }) {
 	return (
 		<DefaultNote header={header}>
 			<img
+				onMouseMove={() => setPromtText('Закрепить заметку', dispatch)}
+				onMouseLeave={() => removePromtText(dispatch)}
 				onClick={() => pinMainNote(header, text, dispatch)}
 				className='note-icons__item'
 				src={pin}
 				alt='here'
 			/>
 			<img
+				onMouseMove={() => setPromtText('Архивировать заметку', dispatch)}
+				onMouseLeave={() => removePromtText(dispatch)}
 				onClick={() => archiveMainNote(header, text, dispatch)}
 				className='note-icons__item'
 				src={archive}
@@ -31,6 +40,8 @@ export default function MainNote({ header, text }) {
 			/>
 
 			<img
+				onMouseMove={() => setPromtText('Удалить заметку', dispatch)}
+				onMouseLeave={() => removePromtText(dispatch)}
 				onClick={() => deleteMainNote(header, text, dispatch)}
 				className='note-icons__item'
 				src={buttonDelete}

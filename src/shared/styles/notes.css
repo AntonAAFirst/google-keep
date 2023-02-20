@@ -8,7 +8,6 @@
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: max-content 1fr;
 	row-gap: 10px;
-	/* border: 4px solid orange; */
 }
 
 .note {
@@ -31,8 +30,6 @@
 
 .note-icons {
 	height: max-content;
-	/* border: 2px solid teal; */
-	/* border: 2px solid black; */
 }
 
 .note:hover .icons-container {
@@ -42,21 +39,15 @@
 .icons-container {
 	display: none;
 	margin: 0 auto;
-	/* border: 2px solid red; */
 	width: max-content;
-	/* margin-top: 8px; */
 }
 
 .note-icons__item {
-	/* padding: 0 4px; */
-	/* padding-top: 10px; */
 	width: 16px;
-	/* border: 2px solid orange; */
 }
 
 .note-icons__item {
 	margin: 4px;
-	/* display: block; */
 	border-radius: 6px;
 	padding: 4px;
 }

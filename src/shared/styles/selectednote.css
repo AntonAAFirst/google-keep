@@ -5,14 +5,9 @@
 	background-color: rgb(0, 0, 0, 0.4);
 	width: 100vw;
 	position: fixed;
-	/* transform: scale(0); */
 	display: grid;
 	grid-template-rows: auto;
 	transition: 0.5s;
-}
-
-.selected-active {
-	/* transform: scale(1); */
 }
 
 .selected-form {

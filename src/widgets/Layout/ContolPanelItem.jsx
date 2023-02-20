@@ -7,7 +7,7 @@ export default function ControlPanelItem({ icon, text, link }) {
 	return (
 		<Link
 			to={link}
-			className='control-panel__item '>
+			className='control-panel__item'>
 			<img
 				src={icon}
 				alt='2'

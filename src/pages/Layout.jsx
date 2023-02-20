@@ -6,7 +6,7 @@ import { Outlet } from 'react-router-dom';
 import Header from '../widgets/Layout/Header';
 import ControlPanel from '../widgets/Layout/ControlPanel';
 import Login from '../widgets/Auth/Login';
-import SelectedNote from '../widgets/SeletedPage/SelectedNote';
+import IconPrompt from '../widgets/NotePage/IconPrompt';
 
 export default function Layout() {
 	const [authActive, setAuthActive] = useState(true);
@@ -22,6 +22,7 @@ export default function Layout() {
 				active={authActive}
 				setActive={setAuthActive}
 			/>
+			<IconPrompt />
 		</div>
 	);
 }

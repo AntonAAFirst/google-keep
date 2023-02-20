@@ -11,6 +11,7 @@ import {
 	pinArchiveNote,
 	unArchiveArchiveNote,
 } from '../../shared/helpers/archivedNoteLogic';
+import { removePromtText, setPromtText } from '../../shared/helpers/promtps';
 
 export default function ArchivedNote({ header, text }) {
 	const dispatch = useDispatch();
@@ -18,12 +19,16 @@ export default function ArchivedNote({ header, text }) {
 	return (
 		<DefaultNote header={header}>
 			<img
+				onMouseMove={() => setPromtText('Закрепить заметку', dispatch)}
+				onMouseLeave={() => removePromtText(dispatch)}
 				onClick={() => pinArchiveNote(header, text, dispatch)}
 				className='note-icons__item'
 				src={pin}
 				alt='here'
 			/>
 			<img
+				onMouseMove={() => setPromtText('Разархивировать заметку', dispatch)}
+				onMouseLeave={() => removePromtText(dispatch)}
 				onClick={() => unArchiveArchiveNote(header, text, dispatch)}
 				className='note-icons__item'
 				src={unarchive}
@@ -31,6 +36,8 @@ export default function ArchivedNote({ header, text }) {
 			/>
 
 			<img
+				onMouseMove={() => setPromtText('Удалить заметку', dispatch)}
+				onMouseLeave={() => removePromtText(dispatch)}
 				onClick={() => deleteArchiveNote(header, text, dispatch)}
 				className='note-icons__item'
 				src={buttonDelete}

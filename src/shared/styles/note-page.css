@@ -26,6 +26,8 @@
 	border-radius: 10px;
 	cursor: pointer;
 	background-color: #ffe4b5;
+	text-decoration: none;
+	color: black;
 }
 
 .note-save:hover {
