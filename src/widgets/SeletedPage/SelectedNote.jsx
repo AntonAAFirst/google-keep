@@ -11,6 +11,11 @@ import {
   newNotes,
   newPinned,
 } from "../../shared/store/noteReducer";
+import {
+  newFirstItemActive,
+  newSecondItemActive,
+  newThirdItemActive,
+} from "../../shared/store/controlPanelReducer";
 
 export default function SelectedNote() {
   const dispatch = useDispatch();
@@ -57,6 +62,10 @@ export default function SelectedNote() {
         dispatch(newArchived(data));
       }
     });
+
+    dispatch(newFirstItemActive(true));
+    dispatch(newSecondItemActive(false));
+    dispatch(newThirdItemActive(false));
   }
 
   function returnNote() {

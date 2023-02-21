@@ -1,15 +1,23 @@
-/** @format */
-
-import { createAction, createReducer } from '@reduxjs/toolkit';
+import { createAction, createReducer } from "@reduxjs/toolkit";
 
 const initialState = {
-	currentItem: null,
+  firstItem: false,
+  secondItem: false,
+  thirdItem: false,
 };
 
-export const newCurrentItem = createAction('NEWCURRENTITEM');
+export const newFirstItemActive = createAction("NEWFIRSTITEMACTIVE");
+export const newSecondItemActive = createAction("NEWSECONDITEMACTIVE");
+export const newThirdItemActive = createAction("NEWITHIRDITEMACTIVE");
 
 export default createReducer(initialState, {
-	[newCurrentItem]: function (state, action) {
-		state.currentItem = action.payload;
-	},
+  [newFirstItemActive]: function (state, action) {
+    state.firstItem = action.payload;
+  },
+  [newSecondItemActive]: function (state, action) {
+    state.secondItem = action.payload;
+  },
+  [newThirdItemActive]: function (state, action) {
+    state.thirdItem = action.payload;
+  },
 });
