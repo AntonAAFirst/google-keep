@@ -5,15 +5,12 @@ import lamp from "../../shared/img/lamp.png";
 import archive from "../../shared/img/archive.png";
 import trash from "../../shared/img/trash.png";
 import ControlPanelItem from "./ContolPanelItem";
-import { Link } from "react-router-dom";
-import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import {
   newFirstItemActive,
   newSecondItemActive,
   newThirdItemActive,
 } from "../../shared/store/controlPanelReducer";
-import { useEffect } from "react";
 
 export default function ControlPanel() {
   const firstActive = useSelector((state) => state.controlPanel.firstItem);

@@ -16,7 +16,6 @@ import {
   newSecondItemActive,
   newThirdItemActive,
 } from "../../shared/store/controlPanelReducer";
-import { patchNameSelectedNote } from "../../shared/helpers/selectedNote";
 
 export default function SelectedNote() {
   const noteIndex = useSelector((state) => state.selectedNote.noteIndex);
@@ -55,7 +54,7 @@ export default function SelectedNote() {
     }
   }
 
-  async function patchReduxNotes(dispatch, path) {
+  async function patchReduxNotes() {
     const id = Cookies.get("currentId");
 
     await defaultFirebaseRequest.get(`/${id}/${path}.json`).then(({ data }) => {
