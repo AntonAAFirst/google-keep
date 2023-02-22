@@ -55,27 +55,6 @@ export default function ControlPanel() {
           setCorrectActive={item.setCorrectActive}
         />
       ))}
-      {/* <ControlPanelItem
-        icon={lamp}
-        text="Заметки"
-        link="notes"
-        active={firstActive}
-        setCorrectActive={newFirstItemActive}
-      />
-      <ControlPanelItem
-        icon={lamp}
-        text="Архив"
-        link="archive"
-        active={secondActive}
-        setCorrectActive={newSecondItemActive}
-      />
-      <ControlPanelItem
-        icon={lamp}
-        text="Корзина"
-        link="trash"
-        active={thirdActive}
-        setCorrectActive={newThirdItemActive}
-      /> */}
     </div>
   );
 }

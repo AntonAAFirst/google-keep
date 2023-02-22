@@ -16,12 +16,13 @@ import {
   newSecondItemActive,
   newThirdItemActive,
 } from "../../shared/store/controlPanelReducer";
+import { patchNameSelectedNote } from "../../shared/helpers/selectedNote";
 
 export default function SelectedNote() {
-  const dispatch = useDispatch();
-
   const noteIndex = useSelector((state) => state.selectedNote.noteIndex);
   const path = useSelector((state) => state.selectedNote.path);
+
+  const dispatch = useDispatch();
 
   const noteName = useSelector((state) => state.selectedNote.noteName);
 
@@ -33,7 +34,7 @@ export default function SelectedNote() {
   const [noteParagraphsInputFlag, setNoteParagraphsInputFlag] = useState(true);
   const [noteParagraphsInputValue, setNoteParagraphsInputValue] = useState("");
 
-  async function saveNote() {
+  async function patchNameSelectedNote() {
     const id = Cookies.get("currentId");
 
     await defaultFirebaseRequest.patch(`/${id}/${path}/${noteIndex}.json`, {
@@ -52,6 +53,10 @@ export default function SelectedNote() {
         paragraphs: noteParagraphs,
       });
     }
+  }
+
+  async function patchReduxNotes(dispatch, path) {
+    const id = Cookies.get("currentId");
 
     await defaultFirebaseRequest.get(`/${id}/${path}.json`).then(({ data }) => {
       if (path === "notes") {
@@ -66,6 +71,11 @@ export default function SelectedNote() {
     dispatch(newFirstItemActive(true));
     dispatch(newSecondItemActive(false));
     dispatch(newThirdItemActive(false));
+  }
+
+  function saveNote() {
+    patchNameSelectedNote();
+    patchReduxNotes();
   }
 
   function returnNote() {

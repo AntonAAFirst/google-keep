@@ -1,15 +1,13 @@
 /** @format */
 
-import React, { useEffect } from "react";
-import { act } from "react-dom/test-utils";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import {
   newFirstItemActive,
   newSecondItemActive,
   newThirdItemActive,
 } from "../../shared/store/controlPanelReducer";
-import { newfirstItem } from "../../shared/store/noteReducer";
 
 export default function ControlPanelItem({
   icon,
