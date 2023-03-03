@@ -14,7 +14,7 @@ export default function Layout() {
 
   return (
     <div className="layout">
-      <Header />
+      <Header setActive={setAuthActive} />
       <div className="main-container">
         <ControlPanel />
         <Outlet />

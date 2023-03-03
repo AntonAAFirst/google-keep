@@ -1,7 +1,7 @@
 /** @format */
 
 import Cookies from "js-cookie";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { defaultFirebaseRequest } from "../shared/http";
 import {
@@ -17,6 +17,7 @@ import "../shared/styles/notes.css";
 import MainNote from "../widgets/Notes/MainNote";
 import PinnedNote from "../widgets/Notes/PinnedNote";
 import VisibleHeader from "../widgets/UI/VisibleHeader";
+import { Reorder } from "framer-motion";
 
 export default function Notes() {
   const dispatch = useDispatch();

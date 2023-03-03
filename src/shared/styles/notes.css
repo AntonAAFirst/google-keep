@@ -1,86 +1,85 @@
 /** @format */
 
 .notes {
-	height: max-content;
-	width: 80%;
-	margin: 0 auto;
-	display: grid;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: max-content 1fr;
-	row-gap: 10px;
+  height: max-content;
+  width: 80%;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: max-content 1fr;
+  row-gap: 10px;
 }
 
 .note {
-	border-radius: 12px;
-	text-align: center;
-	cursor: pointer;
-	height: max-content;
-	width: 200px;
-	padding: 16px;
-	padding-bottom: 0;
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-		'Lucida Sans', Arial, sans-serif;
-	border: 2px solid silver;
-	position: relative;
-	display: grid;
-	grid-template-rows: max-content 1fr;
+  border-radius: 12px;
+  text-align: center;
+  cursor: pointer;
+  height: max-content;
+  width: 200px;
+  padding: 16px;
+  padding-bottom: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  border: 2px solid silver;
+  position: relative;
+  display: grid;
+  grid-template-rows: max-content 1fr;
 }
-
 /* РАБОТА С НИЖНИМИ ИКОНКАМИ */
 
 .note-icons {
-	height: max-content;
+  height: max-content;
 }
 
 .note:hover .icons-container {
-	display: flex;
+  display: flex;
 }
 
 .icons-container {
-	display: none;
-	margin: 0 auto;
-	width: max-content;
+  display: none;
+  margin: 0 auto;
+  width: max-content;
 }
 
 .note-icons__item {
-	width: 16px;
+  width: 16px;
 }
 
 .note-icons__item {
-	margin: 4px;
-	border-radius: 6px;
-	padding: 4px;
+  margin: 4px;
+  border-radius: 6px;
+  padding: 4px;
 }
 
 .img-prompt {
-	position: fixed;
-	font-size: 12px;
-	margin-top: 24px;
+  position: fixed;
+  font-size: 12px;
+  margin-top: 24px;
 }
 
 .note-icons__item:hover {
-	background-color: silver;
+  background-color: silver;
 }
 
 .note-ok {
-	display: none;
+  display: none;
 }
 
 .note:hover .note-ok {
-	margin-top: 0;
-	display: block;
-	position: absolute;
-	margin-left: -6px;
-	margin-top: -6px;
-	width: 25px;
+  margin-top: 0;
+  display: block;
+  position: absolute;
+  margin-left: -6px;
+  margin-top: -6px;
+  width: 25px;
 }
 
 /* ИКОНКА ОК СВЕРХУ СЛЕВА */
 
 .auth-text {
-	font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-		'Lucida Sans', Arial, sans-serif;
-	text-align: center;
-	margin-bottom: 20px;
-	cursor: pointer;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
